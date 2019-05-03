@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Error Page</title>
+	<link rel = "stylesheet" href = "{% static 'CSS/mystyle22.css' %}">
+	<style media="screen" type="text/css">
+		.message_box{
+			font-family: Arial;
+	    border-radius: 20px;
+	    width: 700px;
+	    height: 300px;
+	    margin: auto;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+		}
+
+		h1 {
+			font: 400 50px/1.3 "arial";
+			color: white;
+			text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+			margin: 0px;
+			text-align: center;
+			vertical_align: middle；
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class = "menu">
+		<a href = "/" title = "Return to Homepage">Return</a>
+	</div>
+	<div class = "message_box">
+		<h1> The player does not exist or the website fails to connect to PUBG API
+	</div>
+</body>
+
+
+</html>

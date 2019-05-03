@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <meta charset="utf-8"> -->
+		<title>Homepage</title>
+
+		<style media="screen" type="text/css">
+
+			body{
+				background: url('/static/Images/pubg.jpg');
+				background-size: 100%;
+			}
+			.content{
+				width: 500px;
+				height: 100px;
+				margin: auto;
+				text-align: center;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+
+			.content input{
+				margin-top: 40px;
+				width: 300px;
+				height: 30px;
+				border-radius: 10px;
+				font-size: 16px;
+				padding-left: 20px;
+			}
+
+			.content button{
+				background-color: orange;
+				color: white;
+				margin-top: 40px;
+				margin-left: 40px;
+				width: 100px;
+				height: 30px;
+				font-size: 20px;
+				border-radius: 5px;
+				border: 0px;
+				padding: 0px;
+				font-style: italic;
+				cursor: pointer;
+			}
+
+			.content button:hover{
+				background-color: white;
+				color: black;
+				border: 0px;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="content">
+			<form action = "/search_player/" method = 'get'>
+				<input type="text" name="playername" placeholder="Enter Player Name (Case Senstive)" required>
+				<button type="submit">Search</button>
+			</form>
+		</div>
+	</body>
+
+</html>

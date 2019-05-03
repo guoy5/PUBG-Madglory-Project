@@ -1,0 +1,145 @@
+body{
+	background: url('/static/Images/pubg.jpg');
+	background-size:100%;
+}
+
+.menu{
+	width:100px;
+	height:30px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.menu a{
+	width: 100px;
+	height: 30px;
+	background-color: orange;
+	color: white;
+	display: inline-block;
+	font-size: 16px;
+	text-align: center;
+	line-height: 30px;
+	text-decoration: none;
+	font-family: Arial;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+.menu a:hover{
+	background-color: white;
+	color: black;
+}
+
+.content{
+    font-family: Arial;
+    border-radius: 20px;
+    width: 700px;
+    height: 500px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #50514c;
+}
+
+.tabs{
+  position:relative;
+  width:700px;
+  height:500px;
+}
+
+.tab-pane{
+  display: inline-block;
+}
+
+.tabs input[type='radio']{
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+
+.tab-item{
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+  padding: 0 20px;
+  color: #e9982a;
+}
+
+.tab-item-solo{
+  border-top-left-radius: 20px;
+}
+
+.tabs input[type='radio']:checked+.tab-item{
+  background: #837c6a;
+  color: #e9982a;
+}
+
+.tab-content{
+  position: absolute;
+  padding: 20px;
+  left: 0;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  background: #837c6a;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.tabs input[type='radio']:checked+.tab-item+.tab-content{
+  z-index: 1
+}
+
+
+.lefttable{
+	float: #left;
+	border-collapse: collapse;
+	font-family: Arial;
+	width: 340px;
+	height: 400px;
+}
+
+.righttable{
+	float: #right;
+	border-collapse: collapse;;
+	font-family: Arial;
+	width: 300px;
+	height: 400px;
+}
+
+th,td{
+	padding: .2em;
+	text-align: left;
+}
+
+th {
+	background: #555 nonerepeat scroll 0 0;
+	color: #fff;
+	background-color: #50514c;
+}
+
+.th1{
+	width: 200px;
+}
+
+.leftbox {
+  width: 360px;
+  height: 100%;
+  float: left;
+}
+
+.rightbox {
+  width: 300px;
+  height: 100%;
+  float: right;
+  color: black;
+}
+
+.letter{
+	height: 150px;
+}

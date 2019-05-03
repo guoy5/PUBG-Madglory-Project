@@ -1,0 +1,385 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Performance</title>
+	<link rel = "stylesheet" href = "{% static 'CSS/mystyle22.css' %}">
+	<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+	<style media="screen" type="text/css">
+			h1 {
+				font: 400 100px/1.3 "arial", sans-serif;
+				color: #e9982a;
+				text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+				margin: 0px;
+				text-align: center;
+			}
+	</style>
+</head>
+
+
+<body>
+	<div class = "menu">
+		<a href = "/" title = "Return to Homepage">Return</a>
+	</div>
+<div class="content">
+	<div class="tabs">
+	  <div class="tab-pane">
+	    <input type="radio" name="tab" id="tab01" checked />
+	    <label class="tab-item tab-item-solo" for="tab01">Solo</label>
+	    <div class="tab-content">
+				<div class = "leftbox">
+					<table class = "lefttable">
+						<thead>
+							<tr>
+								<th class = "th1">Attribute
+								<th class = "th2">Stats
+						</thead>
+						<tbody>
+							<tr>
+								<td>Games Played
+								<td><div>{{ TotalGameCount1 }} </div>
+							<tr>
+								<td>Total Wins
+								<td><div>{{ TotalWins1 }} </div>
+							<tr>
+								<td>Total Losses
+								<td><div>{{ TotalLosses1 }} </div>
+							<tr>
+								<td>Win Ratio
+								<td><div>{{ WinRatio1 }} </div>
+							<tr>
+								<td>Average Finish Place
+								<td><div>{{ Avgfinishplace1 }} </div>
+							<tr>
+								<td>Total Kills
+								<td><div>{{ TotalKills1 }} </div>
+							<tr>
+								<td>Average Kills
+								<td><div>{{ AvgKills1 }} </div>
+							<tr>
+								<td>Average Damages
+								<td><div>{{ Avgdamagematch1 }} </div>
+							<tr>
+								<td>Total Revives
+								<td><div>{{ TotalRevives1 }} </div>
+							<tr>
+								<td>Total Assists
+								<td><div>{{ TotalAssists1 }} </div>
+							<tr>
+								<td>Longest Range Kill
+								<td><div>{{ LongestRangeKill1 }} </div>
+							<tr>
+								<td>Total Headshots
+								<td><div>{{ TotalHeadshots1 }} </div>
+							<tr>
+								<td>Number of Suicides
+								<td><div>{{ numberofsuicides1 }} </div>
+							<tr>
+								<td>Number of Teamkills
+								<td><div>{{ numberofteamkills1 }} </div>
+							<tr>
+								<td>Most Used Weapon
+								<td>{{ MostUsedWeapon1 }}
+						</tbody>
+					</table>
+				</div>
+
+				<div class = "rightbox">
+					<table class = "righttable">
+						<tr class = "letter">
+							<td><h1> {{final_score1}} </h1>
+						<tr class = "graph">
+							<td>
+							<canvas id="myChart1" width = 150px height= 150px></canvas>
+							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+							<script>
+								var ctx = document.getElementById('myChart1').getContext('2d');
+								var chart = new Chart(ctx, {
+										type: 'radar',
+										data: {
+												labels: ['Survival', 'Supply', 'Kills', 'Damages', 'Distances'],
+												datasets: [{
+														data: [{{survival_score1}}, {{supply_score1}}, {{kill_score1}}, {{damage_score1}}, {{distance_score1}}],
+														backgroundColor: "rgba(230, 126, 34, 0.6)",
+														borderColor: "rgba(230, 126, 34,0.6)",
+												}]
+										},
+										options: {
+											legend: {
+												display: false,
+											},
+											radius:{
+												fontSize: 10,
+											},
+											scale: {
+												ticks: {
+													display: false,
+													min: 0,
+													max: 100,
+													stepSize: 20,
+													beginAtZero:true,
+												 },
+												 gridLines: {
+													color: "white",
+													lineWidth: 2,
+												 },
+												 angleLines: {
+													display: false,
+												 },
+												 pointLabels: {
+													fontSize: 13,
+													fontColor: "White",
+												}
+											}
+										},
+								});
+								ctx.fillStyle = "blue";
+							</script>
+							</td>
+					</table>
+				</div>
+	    </div>
+	  </div>
+	  <div class="tab-pane">
+	    <input type="radio" name="tab" id="tab02"/>
+	    <label class="tab-item" for="tab02">Duo</label>
+	    <div class="tab-content">
+				<div class = "leftbox">
+					<table class = "lefttable">
+						<thead>
+							<tr>
+								<th class = "th1">Attribute
+								<th class = "th2">Stats
+						</thead>
+						<tbody>
+							<tr>
+								<td>Games Played
+								<td><div>{{ TotalGameCount2 }} </div>
+							<tr>
+								<td>Total Wins
+								<td><div>{{ TotalWins2 }} </div>
+							<tr>
+								<td>Total Losses
+								<td><div>{{ TotalLosses2 }} </div>
+							<tr>
+								<td>Win Ratio
+								<td><div>{{ WinRatio2 }} </div>
+							<tr>
+								<td>Average Finish Place
+								<td><div>{{ Avgfinishplace2 }} </div>
+							<tr>
+								<td>Total Kills
+								<td><div>{{ TotalKills2 }} </div>
+							<tr>
+								<td>Average Kills
+								<td><div>{{ AvgKills2 }} </div>
+							<tr>
+								<td>Average Damages
+								<td><div>{{ Avgdamagematch2 }} </div>
+							<tr>
+								<td>Total Revives
+								<td><div>{{ TotalRevives2 }} </div>
+							<tr>
+								<td>Total Assists
+								<td><div>{{ TotalAssists2 }} </div>
+							<tr>
+								<td>Longest Range Kill
+								<td><div>{{ LongestRangeKill2 }} </div>
+							<tr>
+								<td>Total Headshots
+								<td><div>{{ TotalHeadshots2 }} </div>
+							<tr>
+								<td>Number of Suicides
+								<td><div>{{ numberofsuicides2 }} </div>
+							<tr>
+								<td>Number of Teamkills
+								<td><div>{{ numberofteamkills2 }} </div>
+							<tr>
+								<td>Most Used Weapon
+								<td>{{ MostUsedWeapon2 }}
+						</tbody>
+					</table>
+				</div>
+
+				<div class = "rightbox">
+					<table class = "righttable">
+						<tr class = "letter">
+							<td><h1> {{final_score2}} </h1>
+						<tr class = "graph">
+							<td>
+							<canvas id="myChart2" width = 150px height= 150px></canvas>
+							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+							<script>
+								var ctx = document.getElementById('myChart2').getContext('2d');
+								var chart = new Chart(ctx, {
+										type: 'radar',
+										data: {
+												labels: ['Survival', 'Supply', 'Kills', 'Damages', 'Distances'],
+												datasets: [{
+														data: [{{survival_score2}}, {{supply_score2}}, {{kill_score2}}, {{damage_score2}}, {{distance_score2}}],
+														backgroundColor: "rgba(230, 126, 34, 0.6)",
+														borderColor: "rgba(230, 126, 34,0.6)",
+												}]
+										},
+										options: {
+											legend: {
+												display: false,
+											},
+											radius:{
+												fontSize: 10,
+											},
+											scale: {
+												ticks: {
+													display: false,
+													min: 0,
+													max: 100,
+													stepSize: 20,
+													beginAtZero:true,
+												 },
+												 gridLines: {
+													color: "white",
+													lineWidth: 2,
+												 },
+												 angleLines: {
+													display: false,
+												 },
+												 pointLabels: {
+													fontSize: 13,
+													fontColor: "White",
+												}
+											}
+										},
+								});
+								ctx.fillStyle = "blue";
+							</script>
+							</td>
+					</table>
+				</div>
+	    </div>
+	  </div>
+	  <div class="tab-pane">
+	    <input type="radio" name="tab" id="tab03"/>
+	    <label class="tab-item" for="tab03">Squad</label>
+	    <div class="tab-content">
+				<div class = "leftbox">
+					<table class = "lefttable">
+						<thead>
+							<tr>
+								<th class = "th1">Attribute
+								<th class = "th2">Stats
+						</thead>
+						<tbody>
+							<tr>
+								<td>Games Played
+								<td><div>{{ TotalGameCount3 }} </div>
+							<tr>
+								<td>Total Wins
+								<td><div>{{ TotalWins3 }} </div>
+							<tr>
+								<td>Total Losses
+								<td><div>{{ TotalLosses3 }} </div>
+							<tr>
+								<td>Win Ratio
+								<td><div>{{ WinRatio3 }} </div>
+							<tr>
+								<td>Average Finish Place
+								<td><div>{{ Avgfinishplace3 }} </div>
+							<tr>
+								<td>Total Kills
+								<td><div>{{ TotalKills3 }} </div>
+							<tr>
+								<td>Average Kills
+								<td><div>{{ AvgKills3 }} </div>
+							<tr>
+								<td>Average Damages
+								<td><div>{{ Avgdamagematch3 }} </div>
+							<tr>
+								<td>Total Revives
+								<td><div>{{ TotalRevives3 }} </div>
+							<tr>
+								<td>Total Assists
+								<td><div>{{ TotalAssists3 }} </div>
+							<tr>
+								<td>Longest Range Kill
+								<td><div>{{ LongestRangeKill3 }} </div>
+							<tr>
+								<td>Total Headshots
+								<td><div>{{ TotalHeadshots3 }} </div>
+							<tr>
+								<td>Number of Suicides
+								<td><div>{{ numberofsuicides3 }} </div>
+							<tr>
+								<td>Number of Teamkills
+								<td><div>{{ numberofteamkills3 }} </div>
+							<tr>
+								<td>Most Used Weapon
+								<td>{{ MostUsedWeapon3 }}
+						</tbody>
+					</table>
+				</div>
+
+				<div class = "rightbox">
+					<table class = "righttable">
+						<tr class = "letter">
+							<td><h1> {{final_score3}} </h1>
+						<tr class = "graph">
+							<td>
+							<canvas id="myChart3" width = 150px height= 150px></canvas>
+							<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+							<script>
+								var ctx = document.getElementById('myChart3').getContext('2d');
+								var chart = new Chart(ctx, {
+										type: 'radar',
+										data: {
+												labels: ['Survival', 'Supply', 'Kills', 'Damages', 'Distances'],
+												datasets: [{
+														data: [{{survival_score3}}, {{supply_score3}}, {{kill_score3}}, {{damage_score3}}, {{distance_score3}}],
+														backgroundColor: "rgba(230, 126, 34, 0.6)",
+														borderColor: "rgba(230, 126, 34,0.6)",
+												}]
+										},
+										options: {
+											legend: {
+												display: false,
+											},
+											radius:{
+												fontSize: 10,
+											},
+											scale: {
+												ticks: {
+													display: false,
+													min: 0,
+													max: 100,
+													stepSize: 20,
+													beginAtZero:true,
+												 },
+												 gridLines: {
+													color: "white",
+													lineWidth: 2,
+												 },
+												 angleLines: {
+													display: false,
+												 },
+												 pointLabels: {
+													fontSize: 13,
+													fontColor: "White",
+												}
+											}
+										},
+								});
+								ctx.fillStyle = "blue";
+							</script>
+							</td>
+					</table>
+				</div>
+			</div>
+	  </div>
+	</div>
+</div>
+
+</body>
+
+</html>
