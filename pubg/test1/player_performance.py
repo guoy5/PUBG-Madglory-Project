@@ -16,8 +16,8 @@ current_time = datetime.datetime.now()
 # urls and headers will be passed in using requests.get
 URL = "https://api.pubg.com/shards/steam"
 headers = {
-  # replace [] with your own pubg api key
-  "Authorization": "Bearer []",
+  # replace [] using your pubg api key
+  "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxN2M5ODYyMC1mYjE3LTAxMzYtYTlmOS0wM2RjN2YxZjgyYzkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTQ3NTcyNTM0LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6InJwaS1jYXBzdG9uZSJ9.9-zTw1ia_-h33tLl9BpxvdKYToOg5_Bufa0JN3QLizc",
   "Accept": "application/vnd.api+json"
 }
 
@@ -154,7 +154,8 @@ def result_stats(stats, rank, gamemode):
 	result["Avgdamagematch" + gamemode] = format(stats.AverageDamageDealt, '.2f')
 	result["Avgfinishplace" + gamemode] = int(stats.AverageWinPlace)
 	result["TotalRevives" + gamemode] = stats.TotalRevives
-	result["MostUsedWeapon" + gamemode] = stats.MostUsedWeapon
+	if stats.MostUsedWeapon != None:
+		result["MostUsedWeapon" + gamemode] = stats.MostUsedWeapon[12:-2]
 	result['final_score' + gamemode] = rank.final_score
 	result['damage_score' + gamemode] = rank.damage_score
 	result['kill_score' + gamemode] = rank.kill_score

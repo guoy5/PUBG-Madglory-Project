@@ -55,6 +55,6 @@ class result_obj:
 		self.AverageWalkDistance = self.TotalWalkDistance/self.TotalGameCount
 		self.AverageSurvivalScore = self.TotalSurvivalScore/self.TotalGameCount
 		self.AverageSupplyScore = self.TotalSupplyScore/self.TotalGameCount
-		self.Weapons[weapon] = self.Weapons.get(weapon,0)+1
-		if self.Weapons:
-			self.MostUsedWeapon = max(self.Weapons, key = self.Weapons.get)[12:-2]
+		self.Weapons[weapon] = self.Weapons.get(weapon,0) + 1
+		if self.Weapons != {}:
+			self.MostUsedWeapon = max(self.Weapons, key = self.Weapons.get)
