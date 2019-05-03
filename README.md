@@ -22,6 +22,7 @@ Follow clients preferences on committing any code or data.
 
 # Requirements:
 Python3
+
 Django2.2
 
 # Before running "python3 manage.py runserver"
@@ -29,4 +30,4 @@ You need to modify two places:
 1. In player_performance.py, please replace '[]' with your personal pubg api key.
 2. In setting.py, please replace '[]' with your django secret key. 
 
-Happy coding!!!
+# Happy coding!!!
